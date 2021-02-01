@@ -1,3 +1,29 @@
+live-config (11.0.2+kaisen1) kaisen-packages; urgency=medium
+
+  * Import new upstream release
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Sun, 31 Jun 2020 17:30:29 +0200
+
+live-config (11.0.2) unstable; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * Drop Iain R. Learmonth from Uploaders on his request (Closes: #970287)
+  * Drop undesired leading 'o' in mount options
+  * Use dpkq-query instead of looking into /var/lib/dpkg/info/
+    (Closes: #944980)
+  * Revert "Drop the xfce4-panel hook, no longer needed."
+  * Add user to the sudo group for better integration
+  * Update the example to avoid direct access to dpkg's database
+  * Update my email in the Uploaders field
+  * Update the lintian override for a renamed tag
+  * Bump Standards-Version to 4.5.1
+  * Extend lintian override for live-config-systemd
+
+  [ Unit 193 ]
+  * Disable the xfce4-panel component if >= 4.16 is installed.
+
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Fri, 08 Jan 2021 14:46:43 +0100
+
 live-config (11.0.1+kaisen1) kaisen-devel; urgency=medium
 
   * Adding 0031-kaisen-password script at components folder

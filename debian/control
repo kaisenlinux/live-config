@@ -1,13 +1,12 @@
 Source: live-config
 Maintainer: Debian Live Maintainers <debian-live@lists.debian.org>
-Uploaders: Iain R. Learmonth <irl@debian.org>,
-           Raphaël Hertzog <hertzog@debian.org>,
+Uploaders: Raphaël Hertzog <raphael@offensive-security.com>,
            Jonathan Carter <jcc@debian.org>
 Section: misc
 Priority: optional
 Build-Depends: debhelper-compat (= 12)
 Build-Depends-Indep: lsb-release
-Standards-Version: 4.4.1
+Standards-Version: 4.5.1
 Vcs-Browser: https://salsa.debian.org/live-team/live-config
 Vcs-Git: https://salsa.debian.org/live-team/live-config.git
 Homepage: https://salsa.debian.org/live-team/live-config

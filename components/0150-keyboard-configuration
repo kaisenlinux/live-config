@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /lib/live/config.sh
+
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
@@ -39,8 +41,8 @@ Cmdline ()
 Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/keyboard-configuration.list ] || \
-	   [ -e /var/lib/live/config/keyboard-configuration ]
+	if ! pkg_is_installed "keyboard-configuration" || \
+	   component_was_executed "keyboard-configuration"
 	then
 		exit 0
 	fi

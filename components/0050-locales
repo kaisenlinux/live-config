@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /lib/live/config.sh
+
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
@@ -27,13 +29,13 @@ Cmdline ()
 Init ()
 {
 	# Checking if a locale package is installed
-	if [ ! -e /var/lib/dpkg/info/locales.list ] && \
-	   [ ! -e /var/lib/dpkg/info/locales-all.list ]
+	if ! pkg_is_installed "locales" && \
+	   ! pkg_is_installed "locales-all"
 	then
 		exit 0
 	fi
 	# Checking if the locale has already been configured
-	if [ -e /var/lib/live/config/locales ]
+	if component_was_executed "locales"
 	then
 		exit 0
 	fi

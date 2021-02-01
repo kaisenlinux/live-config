@@ -2,4 +2,4 @@
 systemd-no-service-for-init-rcS-script live-config
 init.d-script-does-not-source-init-functions etc/init.d/live-config
 # Status is not useful, it's a oneshot bootup script
-init.d-script-does-not-implement-optional-option etc/init.d/live-config status
+init.d-script-does-not-implement-status-option etc/init.d/live-config

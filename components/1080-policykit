@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. /lib/live/config.sh
+
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
@@ -38,8 +40,8 @@ Init ()
 	esac
 
 	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/policykit-1.list ] || \
-	   [ -e /var/lib/live/config/policykit ]
+	if ! pkg_is_installed "policykit-1" || \
+	   component_was_executed "policykit"
 	then
 		exit 0
 	fi

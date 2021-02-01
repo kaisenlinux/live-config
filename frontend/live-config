@@ -30,7 +30,7 @@ DEBCONF_NOWARNINGS="yes"
 export DEBIAN_FRONTEND DEBIAN_PRIORITY DEBCONF_NOWARNINGS
 
 _IP_SEPARATOR="-"
-_PROC_OPTIONS="onodev,noexec,nosuid"
+_PROC_OPTIONS="nodev,noexec,nosuid"
 export _IP_SEPARATOR _PROC_OPTIONS
 
 _COMPONENTS="$(ls /lib/live/config/*)"
