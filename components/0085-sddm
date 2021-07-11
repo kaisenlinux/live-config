@@ -67,7 +67,7 @@ Config ()
 	then
 		LIVE_X_SESSION_MANAGER=$(realpath /usr/bin/x-session-manager)
 		case "${LIVE_X_SESSION_MANAGER}" in
-			/usr/bin/startkde)
+			/usr/bin/startplasma-x11)
 				LIVE_SESSION="plasma.desktop"
 				;;
 

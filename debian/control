@@ -1,6 +1,6 @@
 Source: live-config
 XSBC-Original-Maintainer: Debian Live Maintainers <debian-live@lists.debian.org>
-Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 Section: misc
 Priority: optional
 Build-Depends: debhelper-compat (= 12)

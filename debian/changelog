@@ -1,3 +1,16 @@
+live-config (11.0.3+kaisen1) kaisen-packages; urgency=medium
+
+  * Import new upstream release
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Mon, 12 Jul 2021 01:23:19 +0200
+
+live-config (11.0.3) unstable; urgency=medium
+
+  * Integrate patch to fix kde plasma desktop auto-login,
+    thanks Leszek Lesner (Closes: #990390)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 28 Jun 2021 11:43:41 +0200
+
 live-config (11.0.2+kaisen1) kaisen-packages; urgency=medium
 
   * Import new upstream release
