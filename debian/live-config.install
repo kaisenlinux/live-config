@@ -1,4 +1,4 @@
-bin
-lib/live
+usr/bin
+usr/lib/live
 usr/share/live
 var

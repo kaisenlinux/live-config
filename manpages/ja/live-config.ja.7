@@ -36,7 +36,7 @@
 構成要素は全て実行されます。これは Live イメージのデフォルトです。
 .IP "\fBlive\-config.components\fP=\fI構成要素1\fP,\fI構成要素2\fP, ... \fI構成要素n\fP | \fBcomponents\fP=\fI構成要素1\fP,\fI構成要素2\fP, ... \fI構成要素n\fP" 4
 指定した構成要素だけが実行されます。順序が重要であることに注意してください。例えば「live\-config.components=sudo,user\-setup」は、sudo
-の設定前にユーザを追加しておく必要があるため機能しません。実行順については /lib/live/config にある構成要素のファイル名を見てください。
+の設定前にユーザを追加しておく必要があるため機能しません。実行順については /usr/lib/live/config にある構成要素のファイル名を見てください。
 .IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 構成要素は何も実行されません。これは「live\-config.components」や「live\-config.nocomponents」を何も指定しないのと同じです。
 .IP "\fBlive\-config.nocomponents\fP=\fI構成要素1\fP,\fI構成要素2\fP, ... \fI構成要素n\fP | \fBnocomponents\fP=\fI構成要素1\fP,\fI構成要素2\fP, ... \fI構成要素n\fP" 4
@@ -53,7 +53,7 @@ wget (http, ftp or file://).
 ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/\fIファイル\fP、Live
 システム自体のルートファイルシステムにある場合は file:///\fIファイル\fP で取得できます。
 .br
-「filesystem」というキーワードを使って、Live システムのルートファイルシステム中の /lib/live/config\-preseed/
+「filesystem」というキーワードを使って、Live システムのルートファイルシステム中の /usr/lib/live/config\-preseed/
 にある preseed ファイルを全て自動的に有効化できます。
 .br
 「medium」というキーワードを使って、Live メディアの /live/config\-preseed/ にある preseed
@@ -126,7 +126,7 @@ use\-cases are available at /usr/share/doc/live\-config/examples/hooks/.
 ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/\fIファイル\fP、Live
 システム自体のルートファイルシステムにある場合は file:///\fIファイル\fP で取得できます。
 .br
-「filesystem」というキーワードにより、Live システムのルートファイルシステムの /lib/live/config\-hooks/
+「filesystem」というキーワードにより、Live システムのルートファイルシステムの /usr/lib/live/config\-hooks/
 にあるフックを全て自動的に有効化することができます。
 .br
 「medium」というキーワードにより、Live メディアの /live/config\-hooks/
@@ -229,7 +229,7 @@ filename like 'progress\-linux.conf').
 \fBlive\-config\fP は下流プロジェクトやローカル用途向けに簡単に独自化できます。
 
 .SS 新しい設定構成要素の追加
-下流プロジェクトは /lib/live/config
+下流プロジェクトは /usr/lib/live/config
 に自分の構成要素を配置するだけで用は済みます。他に何かする必要はなく、その構成要素はブート中に自動的に呼ばれます。
 .PP
 構成要素は自分専用の Debian パッケージに配置するのが最善です。構成要素の例を収録した見本のパッケージが
@@ -247,7 +247,7 @@ Live システム自体の設定ファイルは自分の Debian パッケージ�
 /usr/share/doc/live\-config/examples にあります。
 
 .SH 構成要素
-\fBlive\-config\fP では /lib/live/config 中の以下の構成要素が現在有効です。
+\fBlive\-config\fP では /usr/lib/live/config 中の以下の構成要素が現在有効です。
 
 .IP \fBdebconf\fP 4
 allows one to apply arbitrary preseed files placed on the live media or an

@@ -3,9 +3,10 @@ XSBC-Original-Maintainer: Debian Live Maintainers <debian-live@lists.debian.org>
 Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 Section: misc
 Priority: optional
-Build-Depends: debhelper-compat (= 12)
+Build-Depends: debhelper-compat (= 13)
 Build-Depends-Indep: lsb-release
-Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
 Vcs-Browser: https://gitlab.com/kaisenlinux/packages/live-config
 Vcs-Git: https://gitlab.com/kaisenlinux/packages/live-config.git
 Homepage: https://salsa.debian.org/live-team/live-config

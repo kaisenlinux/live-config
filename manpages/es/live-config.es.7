@@ -50,7 +50,7 @@ utilizan por defecto.
 Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el
 orden es importante. p.ej. «live\-config=sudo,user\-setup» no funcionaría ya
 que el usuario debe añadirse antes de configurarse como «sudo». Puede
-revisarse los nombres de los scripts en /lib/live/config para ver su orden.
+revisarse los nombres de los scripts en /usr/lib/live/config para ver su orden.
 .IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 No se ejecuta ningún componente. Es lo mismo que no utilizar ninguno de
 «live\-config.components» o «live\-config.nocomponents».
@@ -70,7 +70,7 @@ Si el fichero está en el medio en vivo, se puede obtener con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
 en el directorio raíz del sistema en vivo.
 .br
-Todos los ficheros de preconfiguración en /lib/live/config\-preseed/ en el
+Todos los ficheros de preconfiguración en /usr/lib/live/config\-preseed/ en el
 sistema de ficheros raíz del sistema en vivo pueden activarse
 automáticamente con la palabra clave «filesystem».
 .br
@@ -146,7 +146,7 @@ Si el fichero está en el medio en vivo, se puede obtener con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
 en el directorio raíz del sistema en vivo.
 .br
-Todos los scripts gancho de /lib/live/config\-hooks/ del directorio raíz del
+Todos los scripts gancho de /usr/lib/live/config\-hooks/ del directorio raíz del
 sistema en vivo pueden activarse con la palabra clave «filesystem».
 .br
 Todos los scripts gancho de /live/config\-hooks/ del medio en vivo pueden
@@ -277,7 +277,7 @@ Esta variable corresponde al parámetro '\fBlive\-config.debug\fP'
 de uso local.
 
 .SS "Añadiendo nuevos componentes de configuración"
-Los proyectos derivados pueden incluir sus componentes en /lib/live/config y
+Los proyectos derivados pueden incluir sus componentes en /usr/lib/live/config y
 sin necesidad de hacer otra cosa, las secuencias de comandos se ejecutarán
 automáticamente durante el proceso de arranque.
 .PP
@@ -298,7 +298,7 @@ dentro de un paquete debian. Se puede encontrar un paquete de muestra con un
 ejemplo de configuración en /usr/share/doc/live\-config/examples.
 
 .SH COMPONENTES
-\fBlive\-config\fP incluye los siguientes componentes en /lib/live/config.
+\fBlive\-config\fP incluye los siguientes componentes en /usr/lib/live/config.
 
 .IP \fBdebconf\fP 4
 allows one to apply arbitrary preseed files placed on the live media or an

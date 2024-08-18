@@ -53,15 +53,15 @@ install:
 	mkdir -p $(DESTDIR)/etc/init.d
 	cp backend/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
 
-	mkdir -p $(DESTDIR)/lib/systemd/system $(DESTDIR)/lib/systemd/system-generators
-	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
-	cp backend/systemd/live-config-getty-generator $(DESTDIR)/lib/systemd/system-generators/
+	mkdir -p $(DESTDIR)/usr/lib/systemd/system $(DESTDIR)/usr/lib/systemd/system-generators
+	cp backend/systemd/live-config.systemd $(DESTDIR)/usr/lib/systemd/system/live-config.service
+	cp backend/systemd/live-config-getty-generator $(DESTDIR)/usr/lib/systemd/system-generators/
 
 	# Installing frontend and components
-	mkdir -p $(DESTDIR)/bin $(DESTDIR)/lib/live/config
-	cp frontend/live-* $(DESTDIR)/bin
-	cp frontend/*.sh $(DESTDIR)/lib/live/
-	cp components/* $(DESTDIR)/lib/live/config
+	mkdir -p $(DESTDIR)/usr/bin $(DESTDIR)/usr/lib/live/config
+	cp frontend/live-* $(DESTDIR)/usr/bin
+	cp frontend/*.sh $(DESTDIR)/usr/lib/live/
+	cp components/* $(DESTDIR)/usr/lib/live/config
 
 	mkdir -p $(DESTDIR)/var/lib/live/config
 

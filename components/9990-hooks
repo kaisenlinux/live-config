@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/live/config.sh
+. /usr/lib/live/config.sh
 
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2016-2020 The Debian Live team
@@ -43,9 +43,9 @@ Config ()
 	do
 		case "${_HOOK}" in
 			filesystem)
-				if ls /lib/live/config-hooks/* 2>&1
+				if ls /usr/lib/live/config-hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/config-hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /usr/lib/live/config-hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 

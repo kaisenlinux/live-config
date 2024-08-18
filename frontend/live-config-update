@@ -72,4 +72,4 @@ sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
 	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
 	-e "s|^LIVE_USER_FULLNAME=.*$|LIVE_USER_FULLNAME=\"${LIVE_USER_FULLNAME}\"|" \
 	-e "s|^PROC_OPTIONS=.*$|PROC_OPTIONS=\"${PROC_OPTIONS}\"|" \
-"${_DIRECTORY}/bin/live-config"
+"${_DIRECTORY}/usr/bin/live-config"

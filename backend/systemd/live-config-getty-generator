@@ -12,7 +12,7 @@ set -e
 
 SYSTEMD_DIR=$1
 
-. /lib/live/init-config.sh
+. /usr/lib/live/init-config.sh
 
 Cmdline ()
 {

@@ -49,7 +49,7 @@ images live.
 Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi
 \&'live\-config=sudo,user\-setup' ne peut pas fonctionner tant que l'utilisateur
 configuré pour utiliser sudo n'a pas été créé. Regardez l'ordre numérique
-des noms de fichiers des composants dans /lib/live/config.
+des noms de fichiers des composants dans /usr/lib/live/config.
 .IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 Aucun composant n'est lancé. Cela revient au même que de n'utiliser ni
 «live\-config.components», ni «live\-config.nocomponents».
@@ -69,7 +69,7 @@ Si le fichier est placé dans le dispositif live, il peut être utilisé avec
 file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
 placé à la racine du système de fichiers du système live.
 .br
-Tous les fichiers de pré\-configuration dans /lib/live/config\-preseed/ dans
+Tous les fichiers de pré\-configuration dans /usr/lib/live/config\-preseed/ dans
 le système de fichiers racine du système live peuvent être automatiquement
 activés avec le mot clé 'filesystem'.
 .br
@@ -147,7 +147,7 @@ Si le fichier est placé dans le dispositif live, il peut être utilisé avec
 file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
 placé à la racine du système de fichiers du système live.
 .br
-Tous les hooks, placés dans /lib/live/config\-hooks/ à la racine du système
+Tous les hooks, placés dans /usr/lib/live/config\-hooks/ à la racine du système
 de fichiers, peuvent être automatiquement activés avec le mot clé
 \&'filesystem'.
 .br

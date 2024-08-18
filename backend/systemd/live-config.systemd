@@ -12,13 +12,13 @@ Documentation=man:live-config
 Before=basic.target
 After=local-fs.target systemd-tmpfiles-setup.service
 DefaultDependencies=no
-ConditionPathExists=/bin/live-config
+ConditionPathExists=/usr//bin/live-config
 ConditionKernelCommandLine=boot=live
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/live-config
+ExecStart=/usr/bin/live-config
 
 [Install]
 WantedBy=basic.target

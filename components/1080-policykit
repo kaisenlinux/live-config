@@ -1,9 +1,9 @@
 #!/bin/sh
 
-. /lib/live/config.sh
+. /usr/lib/live/config.sh
 
 ## live-config(7) - System Configuration Components
-## Copyright (C) 2016-2020 The Debian Live team
+## Copyright (C) 2016-2023 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -40,7 +40,8 @@ Init ()
 	esac
 
 	# Checking if package is installed
-	if ! pkg_is_installed "policykit-1" || \
+	if (! pkg_is_installed "polkitd" &&
+		! pkg_is_installed "policykit-1") || \
 	   component_was_executed "policykit"
 	then
 		exit 0
@@ -51,53 +52,34 @@ Init ()
 
 Config ()
 {
-	# Grant administrative PolicyKit pivilieges to default user
-
 	# Configure PolicyKit in live session
-	mkdir -p /etc/PolicyKit
-
-cat > /etc/PolicyKit/PolicyKit.conf << EOF
-<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
-
-<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
-"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
-
-<!-- See the manual page PolicyKit.conf(5) for file format -->
-
-<config version="0.1">
-	<match user="root">
-		<return result="yes"/>
-	</match>
-EOF
+	mkdir -p /usr/share/polkit-1/rules.d
 
 	if [ -n "${LIVE_USERNAME}" ]
 	then
-
-cat >> /etc/PolicyKit/PolicyKit.conf << EOF
-	<!-- don't ask password for user in live session -->
-	<match user="${LIVE_USERNAME}">
-		<return result="yes"/>
-	</match>
+		cat > /usr/share/polkit-1/rules.d/sudo_on_live.rules << EOF
+// Grant the live user access without a prompt
+polkit.addRule(function(action, subject) {
+	if (subject.local &&
+		subject.active &&
+		subject.user === "${LIVE_USERNAME}" &&
+		subject.isInGroup("sudo")) {
+		return polkit.Result.YES;
+	}
+});
 EOF
-
+	else
+		cat > /usr/share/polkit-1/rules.d/sudo_on_live.rules << EOF
+// Grant the sudo users access without a prompt
+polkit.addRule(function(action, subject) {
+	if (subject.local &&
+		subject.active &&
+		subject.isInGroup("sudo")) {
+		return polkit.Result.YES;
+	}
+});
+EOF
 	fi
-
-cat >> /etc/PolicyKit/PolicyKit.conf << EOF
-	<define_admin_auth group="adm"/>
-</config>
-EOF
-
-	mkdir -p /var/lib/polkit-1/localauthority/10-vendor.d
-
-cat > /var/lib/polkit-1/localauthority/10-vendor.d/10-live-cd.pkla << EOF
-# Policy to allow the livecd user to bypass policykit
-[Live CD user permissions]
-Identity=unix-user:${LIVE_USERNAME}
-Action=*
-ResultAny=no
-ResultInactive=no
-ResultActive=yes
-EOF
 
 	# Creating state file
 	touch /var/lib/live/config/policykit

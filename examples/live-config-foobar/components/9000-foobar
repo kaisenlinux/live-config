@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/live/config.sh
+. /usr/lib/live/config.sh
 
 ## live-config-foobar(7) - Additional Configuration Components for live systems
 ## Copyright (C) 2016-2020 The Debian Live team

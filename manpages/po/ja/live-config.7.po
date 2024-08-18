@@ -144,11 +144,11 @@ msgid ""
 "Only the specified components are run. Note that the order matters, e.g. "
 "'live-config.components=sudo,user-setup' would not work since the user needs "
 "to be added before it can be configured for sudo. Look at the filenames of "
-"the components in /lib/live/config for their ordering number."
+"the components in /usr/lib/live/config for their ordering number."
 msgstr ""
 "指定した構成要素だけが実行されます。順序が重要であることに注意してください。"
 "例えば「live-config.components=sudo,user-setup」は、sudo の設定前にユーザを追"
-"加しておく必要があるため機能しません。実行順については /lib/live/config にあ"
+"加しておく必要があるため機能しません。実行順については /usr/lib/live/config にあ"
 "る構成要素のファイル名を見てください。"
 
 #. type: IP
@@ -225,11 +225,11 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:43
 msgid ""
-"All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
+"All preseed files in /usr/lib/live/config-preseed/ in the root filesystem of the "
 "live system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "「filesystem」というキーワードを使って、Live システムのルートファイルシステム"
-"中の /lib/live/config-preseed/ にある preseed ファイルを全て自動的に有効化で"
+"中の /usr/lib/live/config-preseed/ にある preseed ファイルを全て自動的に有効化で"
 "きます。"
 
 #. type: Plain text
@@ -598,11 +598,11 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
+"All hooks in /usr/lib/live/config-hooks/ in the root filesystem of the live "
 "system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "「filesystem」というキーワードにより、Live システムのルートファイルシステム"
-"の /lib/live/config-hooks/ にあるフックを全て自動的に有効化することができま"
+"の /usr/lib/live/config-hooks/ にあるフックを全て自動的に有効化することができま"
 "す。"
 
 #. type: Plain text
@@ -1141,11 +1141,11 @@ msgstr "新しい設定構成要素の追加"
 #. type: Plain text
 #: en/live-config.7:169
 msgid ""
-"Downstream projects can put their components into /lib/live/config and do "
+"Downstream projects can put their components into /usr/lib/live/config and do "
 "not need to do anything else, the components will be called automatically "
 "during boot."
 msgstr ""
-"下流プロジェクトは /lib/live/config に自分の構成要素を配置するだけで用は済み"
+"下流プロジェクトは /usr/lib/live/config に自分の構成要素を配置するだけで用は済み"
 "ます。他に何かする必要はなく、その構成要素はブート中に自動的に呼ばれます。"
 
 #. type: Plain text
@@ -1213,7 +1213,7 @@ msgid ""
 "B<live-config> currently features the following components in /lib/live/"
 "config."
 msgstr ""
-"B<live-config> では /lib/live/config 中の以下の構成要素が現在有効です。"
+"B<live-config> では /usr/lib/live/config 中の以下の構成要素が現在有効です。"
 
 #. type: IP
 #: en/live-config.7:180

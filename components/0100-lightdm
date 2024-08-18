@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/live/config.sh
+. /usr/lib/live/config.sh
 
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2016-2020 The Debian Live team

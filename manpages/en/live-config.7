@@ -26,7 +26,7 @@ If \fIlive\-build\fR(7) is used to build the live system, the live\-config param
 .IP "\fBlive\-config.components\fR | \fBcomponents\fR" 4
 All components are run. This is what live images use by default.
 .IP "\fBlive\-config.components\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR | \fBcomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR" 4
-Only the specified components are run. Note that the order matters, e.g. 'live\-config.components=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the components in /lib/live/config for their ordering number.
+Only the specified components are run. Note that the order matters, e.g. 'live\-config.components=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the components in /usr/lib/live/config for their ordering number.
 .IP "\fBlive\-config.nocomponents\fR | \fBnocomponents\fR" 4
 No component is run. This is the same as not using any of 'live\-config.components' or 'live\-config.nocomponents'.
 .IP "\fBlive\-config.nocomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR | \fBnocomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR" 4
@@ -40,7 +40,7 @@ Allows one to fetch and apply one or more debconf preseed files to be applied to
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All preseed files in /lib/live/config\-preseed/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
+All preseed files in /usr/lib/live/config\-preseed/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
 .br
 All preseed files in /live/config\-preseed/ of the live medium can be automatically enabled with the keyword 'medium'.
 .br
@@ -82,7 +82,7 @@ Allows one to fetch and execute one or more arbitrary files. Note that the URLs 
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All hooks in /lib/live/config\-hooks/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
+All hooks in /usr/lib/live/config\-hooks/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
 .br
 All hooks in /live/config\-hooks/ of the live medium can be automatically enabled with the keyword 'medium'.
 .br
@@ -166,7 +166,7 @@ This variable corresponds to the '\fBlive\-config.debug\fR' parameter.
 \fBlive\-config\fR can be easily customized for downstream projects or local usage.
 
 .SS Adding new config components
-Downstream projects can put their components into /lib/live/config and do not need to do anything else, the components will be called automatically during boot.
+Downstream projects can put their components into /usr/lib/live/config and do not need to do anything else, the components will be called automatically during boot.
 .PP
 The components are best put into an own debian package. A sample package containing an example component can be found in /usr/share/doc/live\-config/examples.
 
@@ -176,7 +176,7 @@ It is not really possible to remove components itself in a sane way yet without 
 The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
 .SH COMPONENTS
-\fBlive\-config\fR currently features the following components in /lib/live/config.
+\fBlive\-config\fR currently features the following components in /usr/lib/live/config.
 
 .IP "\fBdebconf\fR" 4
 allows one to apply arbitrary preseed files placed on the live media or an http/ftp server.

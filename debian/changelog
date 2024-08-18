@@ -1,3 +1,31 @@
+live-config (11.0.5+kaisen1) kaisen-packages; urgency=medium
+
+  * Import the new upstream release
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Sun, 18 Aug 2024 03:41:18 +0200
+
+live-config (11.0.5) unstable; urgency=medium
+
+  * d/control: bump Standards-Version to 4.7.0, no changes
+  * Drop obsolete Lintian override
+  * Update Lintian overrides syntax
+  * Install files to /usr/
+  * Set Rules-Requires-Root: no
+  * Add myself to Uploaders
+
+ -- Luca Boccassi <bluca@debian.org>  Sat, 25 May 2024 18:35:12 +0100
+
+live-config (11.0.4) unstable; urgency=medium
+
+  [ Jonathan Carter ]
+  * Add changelog entries for Roland's recent changes
+
+  [ Roland Clobus]
+  * Update the polkit configuration to polkitd (Closes: #1037295)
+  * Add lintian overrides
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 10 Jul 2023 20:43:26 +0200
+
 live-config (11.0.3+kaisen2) kaisen-packages; urgency=medium
 
   * Remove sed pattern to enable PasswordAuthentication in the live system

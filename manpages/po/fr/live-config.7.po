@@ -148,12 +148,12 @@ msgid ""
 "Only the specified components are run. Note that the order matters, e.g. "
 "'live-config.components=sudo,user-setup' would not work since the user needs "
 "to be added before it can be configured for sudo. Look at the filenames of "
-"the components in /lib/live/config for their ordering number."
+"the components in /usr/lib/live/config for their ordering number."
 msgstr ""
 "Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi "
 "'live-config=sudo,user-setup' ne peut pas fonctionner tant que l'utilisateur "
 "configuré pour utiliser sudo n'a pas été créé. Regardez l'ordre numérique "
-"des noms de fichiers des composants dans /lib/live/config."
+"des noms de fichiers des composants dans /usr/lib/live/config."
 
 #. type: IP
 #: en/live-config.7:29
@@ -231,10 +231,10 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:43
 msgid ""
-"All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
+"All preseed files in /usr/lib/live/config-preseed/ in the root filesystem of the "
 "live system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
-"Tous les fichiers de pré-configuration dans /lib/live/config-preseed/ dans "
+"Tous les fichiers de pré-configuration dans /usr/lib/live/config-preseed/ dans "
 "le système de fichiers racine du système live peuvent être automatiquement "
 "activés avec le mot clé 'filesystem'."
 
@@ -614,10 +614,10 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
+"All hooks in /usr/lib/live/config-hooks/ in the root filesystem of the live "
 "system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
-"Tous les hooks, placés dans /lib/live/config-hooks/ à la racine du système "
+"Tous les hooks, placés dans /usr/lib/live/config-hooks/ à la racine du système "
 "de fichiers, peuvent être automatiquement activés avec le mot clé "
 "'filesystem'."
 
@@ -1171,7 +1171,7 @@ msgstr "Ajout de nouveaux composants de configuration"
 #. type: Plain text
 #: en/live-config.7:169
 msgid ""
-"Downstream projects can put their components into /lib/live/config and do "
+"Downstream projects can put their components into /usr/lib/live/config and do "
 "not need to do anything else, the components will be called automatically "
 "during boot."
 msgstr ""

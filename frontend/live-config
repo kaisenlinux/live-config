@@ -22,7 +22,7 @@
 
 #set -e
 
-. /lib/live/init-config.sh
+. /usr/lib/live/init-config.sh
 
 DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
@@ -33,7 +33,7 @@ _IP_SEPARATOR="-"
 _PROC_OPTIONS="nodev,noexec,nosuid"
 export _IP_SEPARATOR _PROC_OPTIONS
 
-_COMPONENTS="$(ls /lib/live/config/*)"
+_COMPONENTS="$(ls /usr/lib/live/config/*)"
 
 Cmdline ()
 {
@@ -52,14 +52,14 @@ Cmdline ()
 				# Run all components
 				LIVE_CONFIG_COMPONENTS=""
 				LIVE_CONFIG_NOCOMPONENTS=""
-				_COMPONENTS="$(ls /lib/live/config/*)"
+				_COMPONENTS="$(ls /usr/lib/live/config/*)"
 				;;
 
 			live-config.nocomponents=*|nocomponents=*)
 				# Don't run requested components
 				LIVE_CONFIG_COMPONENTS=""
 				LIVE_CONFIG_NOCOMPONENTS="${_PARAMETER#*nocomponents=}"
-				_COMPONENTS="$(ls /lib/live/config/*)"
+				_COMPONENTS="$(ls /usr/lib/live/config/*)"
 				;;
 
 			live-config.nocomponents|nocomponents)
@@ -81,7 +81,7 @@ Cmdline ()
 	then
 		for _COMPONENT in $(echo ${LIVE_CONFIG_COMPONENTS} | sed -e 's|,| |g')
 		do
-			_COMPONENTS="${_COMPONENTS} $(ls /lib/live/config/????-${_COMPONENT} 2> /dev/null || true)"
+			_COMPONENTS="${_COMPONENTS} $(ls /usr/lib/live/config/????-${_COMPONENT} 2> /dev/null || true)"
 		done
 	fi
 
@@ -90,7 +90,7 @@ Cmdline ()
 	then
 		for _NOCOMPONENT in $(echo ${LIVE_CONFIG_NOCOMPONENTS} | sed -e 's|,| |g')
 		do
-			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCOMPONENT} 2> /dev/null || echo none)||")"
+			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /usr/lib/live/config/????-${_NOCOMPONENT} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
